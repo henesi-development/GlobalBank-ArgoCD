@@ -1,0 +1,10 @@
+applications:
+  globalbank-frontend:
+    name: globalbank-frontend
+    namespace: dev
+    repoPath: globalbank-frontend
+
+  globalbank-backend:
+    name: globalbank-backend
+    namespace: dev
+    repoPath: globalbank-backend
