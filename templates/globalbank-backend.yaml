@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .Values.applications.globalbank-backend.name }}
+  name: {{ .Values.applications.backend.name }}
   namespace: dev
 spec:
   project: default
   source:
     repoURL: https://github.com/henesi/GlobalBank-Helm-Charts/
     targetRevision: master
-    path: {{ .Values.applications.globalbank-backend.repoPath }}
+    path: {{ .Values.applications.backend.repoPath }}
   destination:
     server: https://kubernetes.default.svc
-    namespace: {{ .Values.applications.globalbank-backend.namespace }}
+    namespace: {{ .Values.applications.backend.namespace }}
   syncPolicy:
     automated:
       prune: true
