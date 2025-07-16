@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: {{ .Values.applications.globalbank-backend.name }}
-  namespace: argocd
+  namespace: dev
 spec:
   project: default
   source:
