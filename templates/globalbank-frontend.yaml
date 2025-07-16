@@ -10,7 +10,7 @@ spec:
     targetRevision: master
     path: {{ .Values.applications.frontend.repoPath }}
   destination:
-    server: https://kubernetes.default.svc
+    server: {{ .Values.applications.cluster.server }}
     namespace: {{ .Values.applications.frontend.namespace }}
   syncPolicy:
     automated:

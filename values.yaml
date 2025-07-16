@@ -8,3 +8,6 @@ applications:
     name: globalbank-backend
     namespace: dev
     repoPath: globalbank-backend
+
+  cluster:
+    server: https://192.168.100.67:32771
