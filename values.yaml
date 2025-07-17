@@ -9,5 +9,15 @@ applications:
     namespace: dev
     repoPath: globalbank-backend
 
+  network:
+    name: globalbank-network
+    namespace: dev
+    repoPath: globalbank-network
+
+  database:
+    name: globalbank-database
+    namespace: dev
+    repoPath: globalbank-database
+
   cluster:
-    server: https://192.168.100.67:32771
+    server: https://192.168.100.67:58826
