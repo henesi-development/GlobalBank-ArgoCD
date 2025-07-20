@@ -20,7 +20,9 @@ applications:
     repoPath: globalbank-database
 
   postgresql:
+    name: globalbank-postgresql
     namespace: dev
-
+    repoPath: globalbank-postgresql
+    
   cluster:
     server: https://192.168.100.67:50934

@@ -1,26 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: globalbank-postgresql
+  name: {{ .Values.applications.postgresql.name }}
   namespace: development
 spec:
   project: default
   source:
-    repoURL: 'https://charts.bitnami.com/bitnami'
-    chart: postgresql
-    targetRevision: 12.10.1
-    helm:
-      values: |-
-        postgresqlPassword:
-          existingSecret: postgresql-credentials
-          existingSecretKey: postgresql-password
-        replication:
-          password:
-            existingSecret: postgresql-credentials
-            existingSecretKey: postgresql-replication-password
-        postgresqlPostgresPassword:
-          existingSecret: postgresql-credentials
-          existingSecretKey: postgresql-postgres-password
+    repoURL: https://github.com/henesi/GlobalBank-Helm-Charts/
+    targetRevision: master
+    path: {{ .Values.applications.postgresql.repoPath }}
   destination:
     server: {{ .Values.applications.cluster.server }}
     namespace: {{ .Values.applications.postgresql.namespace }}
