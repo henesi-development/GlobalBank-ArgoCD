@@ -19,10 +19,5 @@ applications:
     namespace: dev
     repoPath: globalbank-database
 
-  testtool:
-    name: globalbank-testtool
-    namespace: dev
-    repoPath: globalbank-testtool
-
   cluster:
     server: https://192.168.100.67:50934
