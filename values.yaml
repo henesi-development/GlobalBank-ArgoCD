@@ -20,4 +20,4 @@ applications:
     repoPath: globalbank-database
 
   cluster:
-    server: https://192.168.100.67:58826
+    server: https://192.168.100.67:50934
