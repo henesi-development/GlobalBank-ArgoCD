@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: globalbank-postgresql
+  namespace: development
+spec:
+  project: default
+  source:
+    repoURL: 'https://charts.bitnami.com/bitnami'
+    chart: postgresql
+    targetRevision: 12.10.1
+    helm:
+      values: |-
+        postgresqlPassword:
+          existingSecret: postgresql-credentials
+          existingSecretKey: postgresql-password
+        replication:
+          password:
+            existingSecret: postgresql-credentials
+            existingSecretKey: postgresql-replication-password
+        postgresqlPostgresPassword:
+          existingSecret: postgresql-credentials
+          existingSecretKey: postgresql-postgres-password
+  destination:
+    server: {{ .Values.applications.cluster.server }}
+    namespace: {{ .Values.applications.postgresql.namespace }}
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
