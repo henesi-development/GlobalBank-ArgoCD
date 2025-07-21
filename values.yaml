@@ -25,4 +25,4 @@ applications:
     repoPath: globalbank-postgresql
     
   cluster:
-    server: https://192.168.100.67:50934
+    server: https://192.168.100.67:63480
