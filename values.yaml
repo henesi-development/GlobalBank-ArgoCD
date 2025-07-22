@@ -14,11 +14,6 @@ applications:
     namespace: dev
     repoPath: globalbank-network
 
-  database:
-    name: globalbank-database
-    namespace: dev
-    repoPath: globalbank-database
-
   postgresql:
     name: globalbank-postgresql
     namespace: dev
